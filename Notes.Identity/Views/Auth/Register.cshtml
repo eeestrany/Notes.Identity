@@ -4,6 +4,16 @@
     <input type ="hidden" asp-for="ReturnUrl"/>
     <div>Sign Up</div>
     <div>
+        <label>FirstName</label>
+        <input asp-for="FirstName" />
+        <span asp-validation-for="FirstName"></span>
+    </div>
+    <div>
+        <label>LastName</label>
+        <input asp-for="LastName" />
+        <span asp-validation-for="LastName"></span>
+    </div>
+    <div>
         <label>UserName</label>
         <input asp-for="UserName"/>
         <span asp-validation-for="UserName"></span>

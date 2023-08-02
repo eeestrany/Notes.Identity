@@ -51,7 +51,7 @@ namespace Notes.Identity.Controllers
             return View(viewModel);
         }
 
-        [HttpGet]
+        [HttpGet("Register")]
         public IActionResult Register(string returnUrl)
         {
             var viewModel = new RegisterViewModel() { ReturnUrl = returnUrl };
@@ -68,7 +68,9 @@ namespace Notes.Identity.Controllers
 
             var user = new AppUser()
             {
-                UserName = viewModel.UserName
+                UserName = viewModel.UserName,
+                FirstName = viewModel.FirstName,
+                LastName = viewModel.LastName,
             };
 
             var result = await _userManager.CreateAsync(user, viewModel.Password);
